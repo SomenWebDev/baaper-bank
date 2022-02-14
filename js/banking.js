@@ -39,20 +39,22 @@ document
 document
   .getElementById("withdraw-button")
   .addEventListener("click", function () {
-    const withdrawInput = document.getElementById("withdraw-input");
-    const withdrawAmountText = withdrawInput.value;
-    const withdrawAmount = parseFloat(withdrawAmountText);
-    console.log(withdrawAmount);
+    // const withdrawInput = document.getElementById("withdraw-input");
+    // const withdrawAmountText = withdrawInput.value;
+    // const withdrawAmount = parseFloat(withdrawAmountText);
+    // console.log(withdrawAmount);
+    const withdrawAmount = getInputValue("withdraw-input");
 
-    const withdrawTotal = document.getElementById("withdraw-total");
-    const previousWithdrawText = withdrawTotal.innerText;
-    const previousWithdrawTotal = parseFloat(previousWithdrawText);
+    // const withdrawTotal = document.getElementById("withdraw-total");
+    // const previousWithdrawText = withdrawTotal.innerText;
+    // const previousWithdrawTotal = parseFloat(previousWithdrawText);
 
-    withdrawTotal.innerText = previousWithdrawTotal + withdrawAmount;
+    // withdrawTotal.innerText = previousWithdrawTotal + withdrawAmount;
+    updateTotalField("withdraw-total", withdrawAmount);
     const balanceTotal = document.getElementById("balance-total");
     const previousBalanceText = balanceTotal.innerText;
     const previousBalanceTotal = parseFloat(previousBalanceText);
     const newBalanceTotal = previousBalanceTotal - withdrawAmount;
     balanceTotal.innerText = newBalanceTotal;
-    withdrawInput.value = "";
+    // withdrawInput.value = "";
   });
