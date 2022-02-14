@@ -5,8 +5,8 @@ function getInputValue(inputId) {
   inputField.value = "";
   return amountValue;
 }
-function updateTotalField(depositAmount) {
-  const depositTotal = document.getElementById("deposit-total");
+function updateTotalField(totalFieldId, depositAmount) {
+  const depositTotal = document.getElementById(totalFieldId);
   const depositAmountText = depositTotal.innerText;
 
   const previousDepositAmount = parseFloat(depositAmountText);
@@ -26,7 +26,7 @@ document
 
     // const previousDepositAmount = parseFloat(depositAmountText);
     // depositTotal.innerText = previousDepositAmount + depositAmount;
-    updateTotalField(depositAmount);
+    updateTotalField("deposit-total", depositAmount);
 
     // update account balance
     const balanceTotal = document.getElementById("balance-total");
