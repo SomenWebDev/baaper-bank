@@ -5,12 +5,12 @@ function getInputValue(inputId) {
   inputField.value = "";
   return amountValue;
 }
-function updateTotalField(totalFieldId, depositAmount) {
-  const depositTotal = document.getElementById(totalFieldId);
-  const depositAmountText = depositTotal.innerText;
+function updateTotalField(totalFieldId, amount) {
+  const totalElement = document.getElementById(totalFieldId);
+  const totalText = totalElement.innerText;
 
-  const previousDepositAmount = parseFloat(depositAmountText);
-  depositTotal.innerText = previousDepositAmount + depositAmount;
+  const previousTotal = parseFloat(totalText);
+  totalElement.innerText = previousTotal + amount;
 }
 
 document
