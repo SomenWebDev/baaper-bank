@@ -12,6 +12,13 @@ function updateTotalField(totalFieldId, amount) {
   const previousTotal = parseFloat(totalText);
   totalElement.innerText = previousTotal + amount;
 }
+function updateBalance(depositAmount) {
+  const balanceTotal = document.getElementById("balance-total");
+  const balanceTotalText = balanceTotal.innerText;
+  const previousBalanceTotal = parseFloat(balanceTotalText);
+
+  balanceTotal.innerText = previousBalanceTotal + depositAmount;
+}
 
 document
   .getElementById("deposit-button")
@@ -29,11 +36,12 @@ document
     updateTotalField("deposit-total", depositAmount);
 
     // update account balance
-    const balanceTotal = document.getElementById("balance-total");
-    const balanceTotalText = balanceTotal.innerText;
-    const previousBalanceTotal = parseFloat(balanceTotalText);
-    const newBalanceTotal = previousBalanceTotal + parseFloat(depositAmount);
-    balanceTotal.innerText = newBalanceTotal;
+    // const balanceTotal = document.getElementById("balance-total");
+    // const balanceTotalText = balanceTotal.innerText;
+    // const previousBalanceTotal = parseFloat(balanceTotalText);
+
+    // balanceTotal.innerText = previousBalanceTotal + depositAmount;
+    updateBalance(depositAmount);
   });
 
 document
