@@ -1,9 +1,9 @@
-function getInputValue() {
-  const depositInput = document.getElementById("deposit-input");
-  const depositAmountText = depositInput.value;
-  const newDepositAmount = parseFloat(depositAmountText);
-  depositInput.value = "";
-  return newDepositAmount;
+function getInputValue(inputId) {
+  const inputField = document.getElementById(inputId);
+  const inputAmountText = inputField.value;
+  const amountValue = parseFloat(inputAmountText);
+  inputField.value = "";
+  return amountValue;
 }
 
 document
@@ -12,7 +12,7 @@ document
     // const depositInput = document.getElementById("deposit-input");
     // const depositAmountText = depositInput.value;
     // const nesDepositAmount = parseFloat(depositAmountText);
-    const newDepositAmount = getInputValue();
+    const newDepositAmount = getInputValue("deposit-input");
 
     const depositTotal = document.getElementById("deposit-total");
     const depositAmountText = depositTotal.innerText;
